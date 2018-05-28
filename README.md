@@ -3,7 +3,7 @@ Crazy-Tachymeter is an exploit that allows you to flood the CAN-Bus with frames 
 
 This project uses a CAN simulator (ICSim by OpenGarages). [[Link]](https://github.com/zombieCraig/ICSim)
 
-![markdown-preview](doc/img/exploitkali.png)![markdown-preview](doc/img/maxspeed.png)
+![markdown-preview](img/exploitkali.png)![markdown-preview](img/maxspeed.png)
 
 ### What do you need
 1) Virtual Machine with a CAN simulator installed. On this VM you also need a vulnerable server for remote command execution.
