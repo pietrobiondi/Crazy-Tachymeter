@@ -8,18 +8,12 @@ This project uses a CAN simulator (ICSim by OpenGarages). [[Link]](https://githu
 ### What do you need
 1) Virtual Machine with a CAN simulator installed. On this VM you also need a vulnerable server for remote command execution.
 2) Kali Linux with this exploit included.
+3) Make sure the machines are connected each other.
 
-### How to setup the environment
-- Download the vulnerable VM with CAN simulator installed from Release. (Bodhi-Linux, user=pass=tachymeter)
-- On Kali Linux, copy the:
 
-  */exploit/crazytachymeter.rb* --> to --> */usr/share/metasploit-framework/modules/exploits/unix/misc/* .
-  
-  Then copy the
-  
-  */exploit/controlUnitMapCanBus.txt*  --> to --> */usr/share/metasploit-framework/data/wordlists/controlUnitMapCanBus.txt*
-  
 ### How to setup the Vulnerable VM
+- Download the vulnerable VM with CAN simulator installed from Release. (Bodhi-Linux, user=pass=tachymeter)
+
 Open a terminal and run the following commands to setup a virtual can interface
 ```
   sudo modprobe can
@@ -37,3 +31,22 @@ At this point you need to start the vulnerable server for remote command executi
   cd Documents
   python vulnerable_server.py
 ```
+At this point your VM is ready and vulnerable for the exploit.
+### How to setup the exploit on Kali Linux
+On Kali Linux, copy the:
+
+  */exploit/crazytachymeter.rb* --> to --> */usr/share/metasploit-framework/modules/exploits/unix/misc/*
+  
+  Then copy the
+  
+  */exploit/controlUnitMapCanBus.txt*  --> to --> */usr/share/metasploit-framework/data/wordlists/controlUnitMapCanBus.txt*
+
+After that, open the msfconsole and then, enter the following commands:
+```
+  use exploit/unix/misc/crazytachymeter 
+  set RHOST [IP_Victim]
+  exploit
+```
+You can also change the path of the file with the ECU mapping!
+
+Enjoy!
