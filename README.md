@@ -35,7 +35,7 @@ Now your VM is ready and vulnerable for the exploit.
 ### How to setup the exploit on Kali Linux
 On Kali Linux, copy the:
 
-  */exploit/crazytachymeter.rb* --> to --> */usr/share/metasploit-framework/modules/exploits/unix/misc/*
+  */exploit/crazytachymeter.rb* --> to --> */usr/share/metasploit-framework/modules/auxiliary/spoof/replay/*
   
   Then copy the
   
@@ -43,9 +43,11 @@ On Kali Linux, copy the:
 
 After that, open the msfconsole and then, enter the following commands:
 ```
-  use exploit/unix/misc/crazytachymeter 
+  use auxiliary/spoof/replay/crazytachymeter 
   set RHOST [IP_Victim]
-  exploit
+  set RPORT [PORT_Victim]
+  set INTERFACE canbusinterface (e.g. vcan0)
+  run
 ```
 Now you can see the exploit running.. Look at the tachymeter.
 You can also change the path of the file with a new ECU mapping!
