@@ -12,7 +12,7 @@ This project uses a CAN simulator (ICSim by OpenGarages). [[Link]](https://githu
 
 
 ### How to setup the Vulnerable VM
-Download the vulnerable VM with CAN simulator installed from **Release**. (Bodhi-Linux, user=pass=tachymeter)
+Download the vulnerable VM with CAN simulator installed from **Release** [[Link]](https://github.com/pietrobiondi/Crazy-Tachymeter/releases). (Bodhi-Linux, user=pass=tachymeter)
 
 Open a terminal and run the following commands to setup a virtual CAN interface.
 ```
