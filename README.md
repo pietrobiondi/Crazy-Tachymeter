@@ -40,6 +40,7 @@ On Kali Linux, copy the:
   */exploit/remote/crazytachymeter_remote.rb* --> to --> */usr/share/metasploit-framework/modules/auxiliary/spoof/replay/*
 
   **OR** (if you have already a metasploit session and you don't need a vulnerable server)
+  
   */exploit/crazytachymeter.rb* --> to --> */usr/share/metasploit-framework/modules/post/hardware/automotive/*
   
   Then copy the
