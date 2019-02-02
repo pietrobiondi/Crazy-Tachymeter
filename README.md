@@ -50,7 +50,7 @@ On Kali Linux, copy the:
 
 After that, based on the choice of the exploit in the previous step, you can run:
 ```
-  use use auxiliary/spoof/replay/crazytachymeter_remote 
+  use auxiliary/spoof/replay/crazytachymeter_remote 
   set interface vcan0
   set rhost IPVictim
   set rport python_server_port_number
